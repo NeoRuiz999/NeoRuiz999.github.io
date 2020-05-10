@@ -1,0 +1,224 @@
+html {
+    scroll-behavior: smooth
+}
+body {
+    background-color:#F1E4D3;
+    width:100%;
+    height:100%;
+    margin:0;
+}
+
+body, html { height: 100%; }
+
+.container {
+    vertical-align: middle;
+    text-align: center;
+    margin:0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-size: contain;
+    background-image: url('flakes.png');
+    background-color: transparent;
+}
+
+.container2 {
+    vertical-align: middle;
+    text-align: center;
+    margin:0;
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    background-size: contain;
+    background-image: url('flakes.png');
+    background-position: center top;
+    background-color: transparent;
+}
+.container:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('02.png');
+    z-index: 4;
+    background-size: cover;
+}
+.container2:before {
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    background-image: url('02.png');
+    z-index: 4;
+    background-size: cover;
+}
+
+.pagetext {
+    width: 90vw;
+    height: 90%;
+    margin: auto;
+    background-image: url('pageold.png');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+}
+
+.pagetext p {
+    text-align: left;
+    padding: 5% 5% 0% 5%;
+    font-size: 8px;
+    font-family: 'Damion', cursive;
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    mix-blend-mode: exclusion;
+}
+
+.headimage {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 35%;
+    height: 35vw;
+    vertical-align: middle;
+    /*top: 5vh;*/
+    background-image: url('2410578.jpg');
+    background-size:  cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.headimage2 {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 35%;
+    height: 35vw;
+    vertical-align: middle;
+    /*top: 5vh;*/
+    background-image: url('2410578.jpg');
+    background-size:  cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(100% 0, 0% 100%, 0 0);
+}
+
+.textcont {
+    width: 35%;
+    height: 35vw;
+    margin: auto;
+    color: #F1E4D3;
+    font-family: 'Leckerli One', cursive;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+}
+.heading {
+    display: inline-block;
+    width: 100%;
+    z-index: 3;
+    line-height: 45px;
+    /*text-shadow: 0px 0px 6px #F1E4D3;*/
+}
+
+.backbox {
+    position: absolute;
+    width: 20%;
+    height: 20vw;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    z-index: 2;
+    background-image: url('2410578.jpg');
+    background-blend-mode: normal;
+    background-size: cover;
+    background-position: center;
+    background-color: #826D8E;
+}
+.backbox2 {
+    position: absolute;
+    width: 21%;
+    height: 21vw;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    z-index: 1;
+    background-color: transparent;
+    border: 3px solid white;
+}
+
+.down {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 20px;
+    position: absolute;
+    font-size: 40px;
+    text-decoration: none;
+    user-select: none;
+    -moz-user-select: none;
+    color: white;
+    z-index: 6;
+}
+
+@media screen and (max-width: 800px) {
+    .headimage {
+        width: 75%;
+        height: 75vw;
+    }
+    .headimage2 {
+        width: 75%;
+        height: 75vw;
+    }
+    .textcont {
+        width: 75%;
+        height: 75vw;
+        font-size: 35px;
+    }
+    .backbox {
+        width: 45%;
+        height: 45vw;
+    }
+    .backbox2 {
+        width: 47%;
+        height: 47vw;
+    }
+    .heading {
+        line-height: 32px;
+    }
+    .pagetext p {
+        text-align: left;
+        padding: 5% 5% 0% 5%;
+        font-size: 12px;
+    }
+    .container2 {
+        height: 50vh;
+    }
+    .container2:before {
+        content: "";
+        height: 50%;
+        width: 100%;
+    }
+  }
