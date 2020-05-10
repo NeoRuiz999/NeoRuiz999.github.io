@@ -268,7 +268,7 @@ body, html { height: 100%; }
     left: 0;
     right: 0;
     bottom: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     position: absolute;
     font-size: 40px;
     text-decoration: none;
@@ -319,5 +319,8 @@ body, html { height: 100%; }
     .headshadow {
         width: 75%;
         height: 75vw;
+    }
+    .down {
+        margin-bottom: 50px;
     }
   }
