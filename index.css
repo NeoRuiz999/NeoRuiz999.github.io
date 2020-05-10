@@ -3,6 +3,8 @@ html {
 }
 body {
     background-color:#F1E4D3;
+    background: linear-gradient(-180deg, rgba(241,228,211,1) 0%, rgba(232,215,193,1) 100%);
+    background: linear-gradient(180deg, rgba(160,184,184,1) 0%, rgba(56,135,152,1) 100%);
     width:100%;
     height:100%;
     margin:0;
@@ -11,6 +13,19 @@ body {
 body, html { height: 100%; }
 
 .container {
+    z-index: 2;
+    vertical-align: middle;
+    text-align: center;
+    margin:0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    /*background-size: contain;
+    background-image: url('flakes.png');*/
+    background-color: transparent;
+}
+.overlay {
+    position: fixed;
     vertical-align: middle;
     text-align: center;
     margin:0;
@@ -20,21 +35,83 @@ body, html { height: 100%; }
     background-size: contain;
     background-image: url('flakes.png');
     background-color: transparent;
+    z-index: 4;
+    transform: translateZ(5) scale(1);
+}
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth
 }
 
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.containerback {
+    position: fixed;
+    vertical-align: middle;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: contain;
+    background-image: url('flakes.png');
+    background-color: transparent;
+    background-position: 50% 50%;
+    z-index: -1;
+}
+.parallax__layer--back {
+    background-image: url('flowers.png');
+    background-size: contain;
+    transform: translateZ(-5px) scale(6);
+    background-position: top center;
+    background-repeat: repeat;
+    width: 200%;
+    height: 200%;
+}
+.parallax__layer--base {
+    transform: translateZ(0);
+}
+.parallax__layer--foreward {
+    background-image: url('flakes.png');
+    transform: translateZ(-2) scale(1);
+}
+  .parallax__layer--deep {
+    background-image: url('04.png');
+    transform: translateZ(-8px) scale(5);
+    width: 300%;
+    height: 300%;
+    opacity: 0.5;
+  }
+.parallax__layer--deeper {
+    background-image: url('flowers2.png');
+    transform: translateZ(-7px) scale(10);
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-position: center right;
+}
 .container2 {
+    z-index: 2;
     vertical-align: middle;
     text-align: center;
     margin:0;
     display: flex;
     width: 100%;
     height: 70vh;
-    background-size: contain;
+    /*background-size: contain;
     background-image: url('flakes.png');
-    background-position: center top;
+    background-position: center top;*/
     background-color: transparent;
 }
-.container:before {
+/*.container:before {
     content: "";
     position: absolute;
     height: 100%;
@@ -51,7 +128,7 @@ body, html { height: 100%; }
     background-image: url('02.png');
     z-index: 4;
     background-size: cover;
-}
+}*/
 
 .pagetext {
     width: 90vw;
@@ -70,8 +147,7 @@ body, html { height: 100%; }
     font-family: 'Damion', cursive;
     font-size: 20px;
     font-weight: 200;
-    color: white;
-    mix-blend-mode: exclusion;
+    color: black;
 }
 
 .headimage {
@@ -115,6 +191,24 @@ body, html { height: 100%; }
     clip-path: polygon(100% 0, 0% 100%, 0 0);
 }
 
+.headshadow {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 35%;
+    height: 35vw;
+    background-color: transparent;
+    -webkit-box-shadow: 0px 0px 41px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px -13px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 41px -13px rgba(0,0,0,0.75);
+}
+
 .textcont {
     width: 35%;
     height: 35vw;
@@ -130,7 +224,7 @@ body, html { height: 100%; }
     width: 100%;
     z-index: 3;
     line-height: 45px;
-    /*text-shadow: 0px 0px 6px #F1E4D3;*/
+    text-shadow: 0px 0px 6px #F1E4D3;
 }
 
 .backbox {
@@ -170,6 +264,7 @@ body, html { height: 100%; }
 }
 
 .down {
+    text-align: center;
     left: 0;
     right: 0;
     bottom: 0;
@@ -180,7 +275,7 @@ body, html { height: 100%; }
     user-select: none;
     -moz-user-select: none;
     color: white;
-    z-index: 6;
+    z-index: 999;
 }
 
 @media screen and (max-width: 800px) {
@@ -216,9 +311,13 @@ body, html { height: 100%; }
     .container2 {
         height: 50vh;
     }
-    .container2:before {
+    /*.container2:before {
         content: "";
         height: 50%;
         width: 100%;
+    }*/
+    .headshadow {
+        width: 75%;
+        height: 75vw;
     }
   }
